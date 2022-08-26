@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'io.objectbox'
+}
+
+android {
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId "com.leo.prb"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+        versionCode libs.versions.versionCode.get().toInteger()
+        versionName libs.versions.versionName.get()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('leoying.keystore')
+            storePassword '33852647'
+            keyAlias 'leoying'
+            keyPassword '33852647'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = "PasswordRemember-${defaultConfig.versionCode}.apk"
+                output.outputFileName = new File(outputFile.name, fileName).name
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation(libs.appcompt)
+    implementation(libs.material)
+    implementation(libs.swiperefreshlayout)
+    implementation(libs.constraintlayout)
+    implementation(libs.bundles.lifecycle)
+    implementation(libs.bundles.navigation)
+
+    implementation(libs.gson)
+    implementation(libs.zxing.core)
+    implementation(libs.qrcode.zxing)
+    implementation(libs.liveEventBusX)
+    implementation(libs.easypermissions)
+    implementation(libs.baseRecyclerViewAdapterHelper)
+    implementation(libs.glide)
+    implementation(libs.dagger)
+    implementation(libs.objectboxAndroid)
+    implementation(libs.pagingRuntime)
+
+    annotationProcessor(libs.glideCompiler)
+    annotationProcessor(libs.daggerCompiler)
+    annotationProcessor(libs.objectboxProcessor)
+
+    testImplementation(libs.pagingCommon)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.atslJunit)
+    androidTestImplementation(libs.espressoCore)
+
+}

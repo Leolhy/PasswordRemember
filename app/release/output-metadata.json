@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.leo.prb",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1003,
+      "versionName": "1.0.03",
+      "outputFile": "PasswordRemember-1003.apk"
+    }
+  ],
+  "elementType": "File"
+}

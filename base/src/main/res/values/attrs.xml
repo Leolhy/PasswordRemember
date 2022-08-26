@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FilletedTab">
+        <attr name="tab_color_nor" format="color" />
+        <attr name="tab_color_sel" format="color" />
+        <attr name="tab_mode" format="enum">
+            <enum name="warp" value="100" />
+            <enum name="fill" value="101" />
+        </attr>
+        <attr name="tab_color_disable" format="color" />
+        <attr name="tab_border_color" format="color" />
+        <attr name="tab_border_width" format="dimension" />
+        <attr name="tab_border_radius" format="dimension" />
+        <attr name="tab_text_size" format="dimension" />
+        <attr name="tab_horizontal_padding" format="dimension" />
+        <attr name="tab_vertical_padding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FilletedSubTab">
+        <attr name="sub_tab_color_nor" format="color" />
+        <attr name="sub_tab_color_sel" format="color" />
+        <attr name="sub_tab_border_color" format="color" />
+        <attr name="sub_tab_border_width" format="dimension" />
+        <attr name="sub_tab_border_radius" format="dimension" />
+        <attr name="sub_tab_text_size" format="dimension" />
+        <attr name="sub_tab_horizontal_padding" format="dimension" />
+        <attr name="sub_tab_vertical_padding" format="dimension" />
+    </declare-styleable>
+</resources>

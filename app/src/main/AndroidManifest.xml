@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.leo.prb">
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".app.PrbApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_password"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_password"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PasswordRemember">
+        <activity
+            android:name=".mvvm.scan.view.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.setting.view.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.type.view.AccountTypeAddActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PasswordRemember.NoActionBar" />
+        <activity
+            android:name=".mvvm.detail.view.AccountDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PasswordRemember.NoActionBar" />
+        <activity
+            android:name=".mvvm.main.view.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PasswordRemember.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

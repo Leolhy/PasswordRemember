@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PasswordRemember</string>
+
+    <string name="loginIn">登录</string>
+    <string name="loginAccount">用户名/账号</string>
+    <string name="loginPassword">密码</string>
+</resources>

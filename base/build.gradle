@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+    id 'io.objectbox'
+}
+
+android {
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    api(libs.appcompt)
+    api(libs.material)
+
+    api(libs.gson)
+    api(libs.liveEventBusX)
+    api(libs.easypermissions)
+    api(libs.baseRecyclerViewAdapterHelper)
+    api(libs.bundles.rxjava.retrofit)
+    api(libs.md.mvp)
+    api(libs.dagger)
+    api(libs.objectboxAndroid)
+    api(libs.pagingRuntime)
+    api(libs.banner)
+    
+    annotationProcessor(libs.daggerCompiler)
+    annotationProcessor(libs.objectboxProcessor)
+
+    testImplementation(libs.pagingCommon)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.atslJunit)
+    androidTestImplementation(libs.espressoCore)
+}
